@@ -1,4 +1,4 @@
-# Mathias’s dotfiles
+# Tim's Dotfiles 2.0 (Forked from Mathias’s dotfiles)
 
 ![Screenshot of my shell prompt](http://i.imgur.com/EkEtphC.png)
 
