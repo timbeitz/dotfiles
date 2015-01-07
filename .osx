@@ -74,8 +74,8 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
-# Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
-/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+# TB Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
+# /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 
 # TB Display ASCII control characters using caret notation in standard text views
 # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
@@ -105,8 +105,8 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 # TB Restart automatically if the computer freezes
 # sudo systemsetup -setrestartfreeze on
 
-# Never go into computer sleep mode
-sudo systemsetup -setcomputersleep Off > /dev/null
+# TB Never go into computer sleep mode
+# sudo systemsetup -setcomputersleep Off > /dev/null
 
 # Check for software updates daily, not just once per week
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
@@ -238,9 +238,9 @@ defaults write com.apple.finder DisableAllAnimations -bool true
 # defaults write com.apple.finder NewWindowTarget -string "PfDe"
 # defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
 
-# Show icons for hard drives, servers, and removable media on the desktop
+# TB Show icons for hard drives, servers, and removable media on the desktop 
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
-defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
@@ -310,7 +310,7 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
 
-# Use list view "Nlsv" in all Finder windows by default
+# TB Use list view "Nlsv" in all Finder windows by default
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
 defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 
@@ -386,10 +386,10 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
-# Remove the auto-hiding Dock delay
-defaults write com.apple.dock autohide-delay -float 0
-# Remove the animation when hiding/showing the Dock
-defaults write com.apple.dock autohide-time-modifier -float 0
+# TB Remove the auto-hiding Dock delay
+# defaults write com.apple.dock autohide-delay -float 0
+# TB Remove the animation when hiding/showing the Dock
+# defaults write com.apple.dock autohide-time-modifier -float 0
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
